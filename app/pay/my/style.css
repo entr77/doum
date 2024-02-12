@@ -1,0 +1,40 @@
+ 
+div{width: 100%;}
+.contents_in_bg{ position: absolute; top:90px;left:0 }
+.my_card{width: 100%;display: block; max-width: 100%;}
+.my_card img{display:block;object-fit:cover; }
+.address{position: absolute; left:32px; top:28px; color: white; font-size: 16px;font-weight: 500;line-height: 144%; }
+.name{position: absolute; left:32px; bottom:60px; color: white; font-size: 14px;font-weight: 400;line-height: 144%; }
+.account{position: absolute; left:32px; bottom:36px; color: white; font-size: 14px;font-weight: 400;line-height: 144%; letter-spacing: -0.392px;}
+.btn_edit{position: absolute; right:32px; top:28px;}
+.btn_link{position: absolute; right:32px; bottom:44px;}
+
+.history_card{ 
+
+    margin-bottom: var(--Spacing-units-sp-4);;
+    border-radius: var(--Spacing-units-sp-2, 8px);
+    background: var(--Color-Paperwhite, #FFFCF8);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+ 
+     align-items: center;
+    gap: var(--Spacing-units-sp-0, 0px);
+    align-self: stretch;
+
+
+    /* typo/plain/200 */
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144%; /* 20.16px */
+    letter-spacing: -0.392px;}
+
+.history_card .title{
+    color: var(--Neutral-Text-primary, #474A56);
+
+/* typo/title/300 */
+ font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 140%; /* 22.4px */
+}

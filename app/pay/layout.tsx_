@@ -1,0 +1,71 @@
+'use client'
+import React, { ReactNode } from 'react';
+
+ 
+import { motion, AnimatePresence } from "framer-motion"
+import styled from "styled-components";
+import { useRouter,usePathname } from "next/navigation"
+import { TransitionGroup, Transition } from 'react-transition-group';
+
+
+interface IProps {
+	children: ReactNode;
+}
+const TIMEOUT = 150;
+const getTransitionStyles = {
+	entering: {
+		position: 'absolute',
+		opacity: 0
+	},
+	entered: {
+		transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
+		opacity: 1
+	},
+	exiting: {
+		transition: `opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out`,
+		opacity: 0
+	}
+};
+
+
+export default  function PayLayout({ children }: IProps) {
+    
+
+  return (
+
+    <div>
+
+      <div className="top">
+                    <div><img src="/image/pay/bg_top.png" width='100%' height='278' alt="계약서"/>  </div>
+      </div>
+      
+        <TransitionGroup style={{ position: 'relative' }}>
+    +				<Transition
+              key={usePathname()}
+              timeout={{
+                enter: TIMEOUT,
+                exit: TIMEOUT
+              }}>
+    +					{(status) => (
+    +						<div
+                  style={{
+                    ...getTransitionStyles[status]
+                  }}>
+                  <div className="content_app  container  py-20 px-8"> 
+                    <div className='h-[100%] w-[100%] p-[2em] '>{children}</div>
+                  
+                    </div>
+                </div>
+              )}
+            </Transition>
+          </TransitionGroup>			
+      
+      
+           
+    
+    </div>
+  )
+}
+
+ 
+ 
